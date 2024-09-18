@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>TODOLIS-TASK</h1>
+
+    <form method="post">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <button type="submit">submit</button>  
+    </form>
+
+    <ul>
+        {% for task in tasks %}  
+            <li>
+                {{ task.title }}  
+               <button><a href="{% url 'update_task' task.id %}">Edit </a></button>  
+                <button><a href="{% url 'delete_task' task.id %}">Delete</a></button>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Task</title>
+</head>
+<body>
+    <h1>UPDATE </h1>
+
+    <form method="post">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <button type="submit">Update</button> 
+    </form>
+   <h2><button><a href="{% url 'index' %}">HOME PAGE</a></button></h2> 
+</body>
+</html>

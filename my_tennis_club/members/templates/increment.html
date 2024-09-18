@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <tittle></tittle>
+</head>
+<body>
+    <h1>Current Value: {{ current_value }}</h1>
+
+    <from method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" name="Increment">Increment</button>
+        <button type="submit" name="Decrement">Decrement</button>
+    </from>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- <h1>Members</h1>
+
+<table border="1">
+{% for x in mymembers %}
+<tr>
+
+<td>{{ x.id }}</td>
+<td>{{ x.firstname }}</td>
+<td>{{ x.lastname }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+<a href="add/">Add member</a>
+</p> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Increment/Decrement Example</title>
+</head>
+<body>
+    <h1>Current Value: {{ current_value }}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" name="increment">Increment</button>
+        <button type="submit" name="decrement">Decrement</button>
+    </form>
+</body>
+</html>

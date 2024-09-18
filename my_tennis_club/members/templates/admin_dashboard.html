@@ -1,0 +1,47 @@
+<!-- admin_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>ADMIN DASHBOARD</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">add</button>
+    </form>
+
+    {% if product_data_list %}
+        <h2>Products</h2>
+        <table border="">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Quality</th>
+                    <th>Product Quantity</th>
+                    <th>tudu list</th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in product_data_list %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.quality }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>
+                            <a href="{% url 'update_product' product.id %}">Edit</a> |
+                            <a href="{% url 'delete_product' product.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
+</body>
+</html>

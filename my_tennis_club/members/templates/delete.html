@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Task</title>
+</head>
+<body>
+    <h1>DELETE</h1>
+
+    <form method="post">  
+        {% csrf_token %}  
+        <button type="submit">delete</button> 
+    </form>
+
+    <h2><button><a href="{% url 'index' %}">home page ki podham bhayya</a></button></h2> 
+</body>
+</html>
